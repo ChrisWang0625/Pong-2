@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SpashScreen.unity
+    guid: c05311498d720e34daf45bc3e45f902b
+  - enabled: 1
+    path: Assets/Scenes/main_scene.unity
+    guid: 346a7af21ced2034f9bf5321b1f6a32a

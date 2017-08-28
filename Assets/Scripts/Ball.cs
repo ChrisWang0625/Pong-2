@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour {
 
@@ -35,8 +36,14 @@ public class Ball : MonoBehaviour {
         if ((col.gameObject.name == "LeftWall") || (col.gameObject.name == "RightWall"))
         {
             SoundManager.Instance.PlayOneShot(SoundManager.Instance.goalBloop);
-            // TODO Update Score UI
-
+            if(col.gameObject.name == "LeftWall")
+            {
+                IncreaseTextUIScore("RightScoreUI");
+            }
+            if (col.gameObject.name == "RightWall")
+            {
+                IncreaseTextUIScore("LeftScoreUI");
+            }
             transform.position = new Vector2(0, 0);
         }
     }
@@ -67,4 +74,16 @@ public class Ball : MonoBehaviour {
     {
         return (ball.y - paddle.y) / paddleHeight;
     }
+
+    void IncreaseTextUIScore(string textUIName)
+    {
+        var textUIComp = GameObject.Find(textUIName).GetComponent<Text>();
+
+        int score = int.Parse(textUIComp.text);
+
+        score++;
+
+        textUIComp.text = score.ToString();
+    }
+
 }
