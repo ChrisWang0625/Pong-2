@@ -25,7 +25,7 @@ public class AIPaddle : MonoBehaviour {
             rigidBody.velocity = Vector2.Lerp(rigidBody.velocity, dir * speed, lerpTweak * Time.deltaTime);
         } else
         {
-            Vector2 dir = new Vector2(0, 0).normalized;
+            Vector2 dir = new Vector2(0, -1).normalized;
             rigidBody.velocity = Vector2.Lerp(rigidBody.velocity, dir * speed, lerpTweak * Time.deltaTime);
         }
 	}
